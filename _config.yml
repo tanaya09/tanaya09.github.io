@@ -22,8 +22,8 @@ repository               : "tanaya09.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  avatar           : "profile.jpeg"
+  name             : "Tanaya Pawar"
   pronouns         : # example: "she/her"  
   bio              : "A problem-solver who values data, precision, and structured thinking to create lasting outcomes."
   location         : "New York"
