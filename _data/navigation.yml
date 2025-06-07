@@ -11,17 +11,10 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
+     - title: "Projects"
+    url: /projects/    
 
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
+ 
     
   - title: "CV"
     url: /files/Tanaya_Pawar_Resume_2025_SDE.pdf
@@ -29,5 +22,4 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+  
