@@ -16,8 +16,8 @@ main:
 
  
     
-  - title: "CV"
-    url: /files/Tanaya_Pawar_Resume_2025_SDE.pdf 
+  # - title: "CV"
+  #   url: /files/Tanaya_Pawar_Resume_2025_SDE.pdf 
     
   # - title: "CV"
   #   url: /cv-json/
