@@ -7,6 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-Software Developer and NYU CS Master’s student passionate about building reliable, high-performance systems. Experienced in startup environments, cross-functional teamwork, and shipping production-ready features across backend and full-stack applications. Skilled in React, Next.js, Node.js, Python, PostgreSQL, and modern DevOps tools. I focus on clean architecture, scalable APIs, and solving real-world problems through efficient, maintainable code.
+Software Developer and NYU CS Master’s student passionate about building scalable backend systems and integrating modern ML and LLM capabilities into real-world applications. I’ve worked in fast-paced startup environments, collaborating across teams to deliver robust, production-ready features across full-stack and data-driven systems. Skilled in React, Next.js, Node.js, PostgreSQL, Docker, and Python, with hands-on experience deploying ML-powered services and LLM-based pipelines.
 
-Actively seeking Fall 2025 and Spring 2026 SDE internship opportunities to contribute to impactful engineering teams, deepen my backend expertise, and build great products. Let’s connect!
+I’m actively seeking Fall 2025 and Spring 2026 SDE internships where I can apply my skills in system design, ML integration, and full-stack development to build impactful products. Let’s connect and create something meaningful.
