@@ -8,48 +8,77 @@ author_profile: true
 <style>
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   padding: 1rem 0;
+  align-items: start;
 }
+
 .project-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
 }
+
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.02);
 }
+
 .project-image {
   width: 100%;
-  border-radius: 10px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
+
+.project-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.project-card a {
+  margin-top: auto;
+  color: #007acc;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  padding-top: 60px;
   left: 0; top: 0;
   width: 100%; height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.7);
 }
+
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
+  background: #fff;
+  margin: 5% auto;
   padding: 2rem;
-  border-radius: 12px;
-  width: 80%;
-  max-width: 700px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
 }
+
 .close {
-  color: #aaa;
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 16px;
   font-size: 24px;
   font-weight: bold;
+  color: #aaa;
   cursor: pointer;
 }
 </style>
@@ -62,7 +91,7 @@ author_profile: true
       {% endif %}
       <h3 class="project-title">{{ project.title }}</h3>
       <p><strong>Tech Stack:</strong> {{ project.tech }}</p>
-      <a href="{{ project.github }}" target="_blank">GitHub ↗</a>
+      <a href="{{ project.github }}" target="_blank" onclick="event.stopPropagation();">GitHub ↗</a>
     </div>
   {% endfor %}
 </div>
@@ -73,7 +102,9 @@ author_profile: true
     <div class="modal-content">
       <span class="close" onclick="closeModal('{{ forloop.index0 }}')">&times;</span>
       <h2>{{ project.title }}</h2>
-      <p>{{ project.content | markdownify }}</p>
+      <p><strong>Tech Stack:</strong> {{ project.tech }}</p>
+      <div>{{ project.content | markdownify }}</div>
+      <p><a href="{{ project.github }}" target="_blank">View on GitHub ↗</a></p>
     </div>
   </div>
 {% endfor %}
