@@ -12,7 +12,8 @@ main:
     url: /publications/
 
   - title: "Resume"
-    url: /files/Tanaya_Pawar_Resume_2025.pdf
+    url: /files/Tanaya%20Pawar%20Resume%202025.pdf
+
 
   - title: "Experience"
     url: /experience/
