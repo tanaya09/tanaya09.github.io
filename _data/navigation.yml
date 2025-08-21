@@ -11,12 +11,14 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Resume"
+    url: /files/Tanaya_Pawar_Resume_2025_SDE.pdf
+
+  - title: "Experience"
+    url: /experience/
+
   - title: "Projects"
     url: /projects/
-
-# Optional CV links (only uncomment one)
-- title: "Resume"
-  url: /files/Tanaya_Pawar_Resume_2025.pdf
 
 
 # - title: "CV"
