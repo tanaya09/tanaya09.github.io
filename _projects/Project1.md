@@ -3,7 +3,7 @@ title: "CrisisCast"
 header:
   image: /images/crisiscast.png
 tech: "Kafka, Spark, MongoDB, FastAPI, Plotly"
-github: "https://github.com/yourusername/crisiscast"
+github: "https://github.com/tanaya09/crisiscast"
 ---
 
 Built real-time emergency detection pipeline by ingesting Reddit data using Kafka and Spark Structured Streaming.  
