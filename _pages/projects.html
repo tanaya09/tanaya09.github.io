@@ -76,6 +76,7 @@ author_profile: true
   width: 90%;
   max-width: 700px;
   position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .close {
@@ -108,10 +109,15 @@ author_profile: true
     <div class="modal-content">
       <span class="close" onclick="closeModal('{{ forloop.index0 }}')">&times;</span>
       <h2>{{ project.title }}</h2>
-      <p><strong>Tech Stack:</strong> {{ project.tech }}</p>
-      <div>{{ project.content | markdownify }}</div>
+      {% if project.header.image %}
+        <img src="{{ project.header.image | relative_url }}" alt="{{ project.title }}" style="width:100%; border-radius: 8px; margin-top: 1rem;"/>
+      {% endif %}
+      {% if project.tech %}
+        <p style="margin-top: 1rem;"><strong>Tech Stack:</strong> {{ project.tech }}</p>
+      {% endif %}
+      <div style="margin-top: 1rem;">{{ project.content | markdownify }}</div>
       {% if project.github %}
-        <p><a href="{{ project.github }}" target="_blank">View on GitHub ↗</a></p>
+        <p style="margin-top: 1.5rem;"><a href="{{ project.github }}" target="_blank" style="color: #007acc;">View on GitHub ↗</a></p>
       {% endif %}
     </div>
   </div>
