@@ -21,7 +21,6 @@ author_profile: true
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
-  cursor: pointer;
 }
 
 .project-card:hover {
@@ -49,8 +48,15 @@ author_profile: true
 
 .project-tech {
   font-size: 0.95rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #555;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .project-github {
@@ -69,7 +75,8 @@ author_profile: true
       {% endif %}
       <div class="project-content">
         <div class="project-title">{{ project.title }}</div>
-        <div class="project-tech">Tech Stack: {{ project.tech }}</div>
+        <div class="project-tech"><strong>Tech Stack:</strong> {{ project.tech }}</div>
+        <div class="project-description">{{ project.content | markdownify }}</div>
         <a class="project-github" href="{{ project.github }}" target="_blank">View on GitHub ↗</a>
       </div>
     </div>
