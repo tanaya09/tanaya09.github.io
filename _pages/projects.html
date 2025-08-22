@@ -1,0 +1,101 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+<style>
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1rem;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  margin-top: auto;
+  font-weight: 500;
+  color: #007acc;
+  text-decoration: none;
+}
+</style>
+
+<div class="projects-grid">
+  {% for project in site.projects %}
+    <div class="project-card" onclick="openModal('{{ forloop.index0 }}')">
+      {% if project.header.image %}
+        <img src="{{ project.header.image | relative_url }}" alt="{{ project.title }}" class="project-image" />
+      {% endif %}
+      <div class="project-content">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-tech">Tech Stack: {{ project.tech }}</p>
+        <a href="{{ project.github }}" class="project-link" onclick="event.stopPropagation();" target="_blank">View on GitHub ↗</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- Modals -->
+{% for project in site.projects %}
+  <div id="modal{{ forloop.index0 }}" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('{{ forloop.index0 }}')">&times;</span>
+      <h2>{{ project.title }}</h2>
+      <p><strong>Tech Stack:</strong> {{ project.tech }}</p>
+      <div>{{ project.content | markdownify }}</div>
+      <p><a href="{{ project.github }}" target="_blank">GitHub ↗</a></p>
+    </div>
+  </div>
+{% endfor %}
+
+<script>
+function openModal(id) {
+  document.getElementById("modal" + id).style.display = "block";
+}
+function closeModal(id) {
+  document.getElementById("modal" + id).style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+}
+</script>
