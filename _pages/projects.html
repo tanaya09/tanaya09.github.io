@@ -35,7 +35,7 @@ author_profile: true
 }
 
 .project-content {
-  padding: 0.15rem 1rem 1rem;
+  padding: 0.75rem 1rem 1rem; /* Adjusted to bring consistent spacing */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -49,6 +49,7 @@ author_profile: true
 
 .project-tech {
   font-size: 0.95rem;
+  margin-top: 0.25rem;  /* Added to balance spacing from image */
   margin-bottom: 0.5rem;
   color: #555;
 }
@@ -58,6 +59,15 @@ author_profile: true
   color: #333;
   margin-bottom: 1rem;
   line-height: 1.4;
+}
+
+/* Normalize markdown spacing */
+.project-description p:first-child {
+  margin-top: 0;
+}
+
+.project-description p {
+  margin: 0.25rem 0;
 }
 
 .project-github {
