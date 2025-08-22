@@ -8,131 +8,70 @@ author_profile: true
 <style>
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .project-card {
-  background: #fff;
+  background: white;
   border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-  text-align: left;
-  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .project-image {
   width: 100%;
-  height: 160px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.75rem;
+}
+
+.project-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-title {
-  font-size: 1.15rem;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .project-tech {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
   color: #555;
-  margin-bottom: 0.75rem;
 }
 
-.project-link {
+.project-github {
   margin-top: auto;
-  color: #007acc;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.7);
-  overflow: auto;
-}
-
-.modal-content {
-  background: #fff;
-  margin: 5% auto;
-  padding: 2rem;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 700px;
-  position: relative;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 16px;
-  font-size: 28px;
+  color: #0366d6;
   font-weight: bold;
-  color: #aaa;
-  cursor: pointer;
+  text-decoration: none;
 }
 </style>
 
 <div class="projects-grid">
   {% for project in site.projects %}
-    <div class="project-card" onclick="openModal('{{ forloop.index0 }}')">
+    <div class="project-card">
       {% if project.header.image %}
-        <img src="{{ project.header.image | relative_url }}" alt="{{ project.title }}" class="project-image"/>
+        <img src="{{ project.header.image | relative_url }}" alt="{{ project.title }}" class="project-image">
       {% endif %}
-      <div class="project-title">{{ project.title }}</div>
-      <div class="project-tech"><strong>Tech Stack:</strong> {{ project.tech }}</div>
-      <a class="project-link" href="{{ project.github }}" onclick="event.stopPropagation();" target="_blank">View on GitHub ↗</a>
+      <div class="project-content">
+        <div class="project-title">{{ project.title }}</div>
+        <div class="project-tech">Tech Stack: {{ project.tech }}</div>
+        <a class="project-github" href="{{ project.github }}" target="_blank">View on GitHub ↗</a>
+      </div>
     </div>
   {% endfor %}
 </div>
-
-<!-- Modals -->
-{% for project in site.projects %}
-  <div id="modal{{ forloop.index0 }}" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('{{ forloop.index0 }}')">&times;</span>
-      <h2>{{ project.title }}</h2>
-      {% if project.header.image %}
-        <img src="{{ project.header.image | relative_url }}" alt="{{ project.title }}" style="width:100%; border-radius: 8px; margin-top: 1rem;"/>
-      {% endif %}
-      {% if project.tech %}
-        <p style="margin-top: 1rem;"><strong>Tech Stack:</strong> {{ project.tech }}</p>
-      {% endif %}
-      <div style="margin-top: 1rem;">{{ project.content | markdownify }}</div>
-      {% if project.github %}
-        <p style="margin-top: 1.5rem;"><a href="{{ project.github }}" target="_blank" style="color: #007acc;">View on GitHub ↗</a></p>
-      {% endif %}
-    </div>
-  </div>
-{% endfor %}
-
-<script>
-function openModal(id) {
-  document.getElementById('modal' + id).style.display = 'block';
-}
-function closeModal(id) {
-  document.getElementById('modal' + id).style.display = 'none';
-}
-window.onclick = function(event) {
-  if (event.target.classList.contains('modal')) {
-    event.target.style.display = "none";
-  }
-}
-</script>
