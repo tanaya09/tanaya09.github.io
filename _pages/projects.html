@@ -35,21 +35,21 @@ author_profile: true
 }
 
 .project-content {
-  padding: 0.75rem 1rem 1rem; /* Adjusted to bring consistent spacing */
+  padding: 0.25rem 1rem 1rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex-grow: 1; /* Allow content to fill the card's height */
 }
 
 .project-title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  min-height: 3.5rem; /* Ensures consistent starting position for content below */
 }
 
 .project-tech {
   font-size: 0.95rem;
-  margin-top: 0.25rem;  /* Added to balance spacing from image */
   margin-bottom: 0.5rem;
   color: #555;
 }
@@ -59,19 +59,10 @@ author_profile: true
   color: #333;
   margin-bottom: 1rem;
   line-height: 1.4;
-}
-
-/* Normalize markdown spacing */
-.project-description p:first-child {
-  margin-top: 0;
-}
-
-.project-description p {
-  margin: 0.25rem 0;
+  flex-grow: 1; /* Expands to push the GitHub link to the bottom */
 }
 
 .project-github {
-  margin-top: auto;
   color: #0366d6;
   font-weight: bold;
   text-decoration: none;
