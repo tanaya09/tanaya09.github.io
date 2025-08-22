@@ -1,7 +1,7 @@
 ---
 title: "Parameter-Efficient Transformer"
 header:
-  image: /images/parameter-efficient-transformer.png
+  image: /images/Roberta.jpeg
 tech: "PyTorch, Hugging Face, LoRA, Python"
 github: "https://github.com/tanaya09/CS-GY-6953-Deep-Learning-Project-2"
 ---
