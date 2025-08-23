@@ -6,78 +6,42 @@ author_profile: true
 ---
 
 <style>
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem 0;
-}
-
-.experience-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem;
-  transition: transform 0.2s ease;
-}
-
-.experience-card:hover {
-  transform: scale(1.02);
+.experience-section {
+  margin-bottom: 2.5rem;
 }
 
 .experience-title {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.3rem;
 }
 
-.experience-company {
-  font-size: 1rem;
+.experience-meta {
+  font-size: 0.95rem;
   color: #555;
-  margin-bottom: 0.3rem;
-}
-
-.experience-location {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 0.5rem;
-}
-
-.experience-dates {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: #888;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .experience-tech {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 .experience-description {
   font-size: 0.9rem;
   color: #333;
-  line-height: 1.4;
+  line-height: 1.5;
   white-space: pre-line;
 }
 </style>
 
-<div class="experience-grid">
-  {% assign experiences = site.data.experiences %}
-  {% for exp in experiences %}
-    <div class="experience-card">
-      <div class="experience-title">{{ exp.title }}</div>
-      <div class="experience-company">{{ exp.company }}</div>
-      <div class="experience-location">{{ exp.location }}</div>
-      <div class="experience-dates">{{ exp.date }}</div>
-      <div class="experience-tech"><strong>Skills:</strong> {{ exp.tech }}</div>
-      <div class="experience-description">{{ exp.description }}</div>
-    </div>
-  {% endfor %}
-</div>
-
+{% assign experiences = site.data.experiences %}
+{% for exp in experiences %}
+  <div class="experience-section">
+    <div class="experience-title">{{ exp.title }}</div>
+    <div class="experience-meta">{{ exp.company }} – {{ exp.location }} | {{ exp.date }}</div>
+    <div class="experience-tech">{{ exp.tech }}</div>
+    <div class="experience-description">{{ exp.description }}</div>
+  </div>
+{% endfor %}
