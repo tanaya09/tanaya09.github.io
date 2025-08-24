@@ -68,12 +68,15 @@ author_profile: true
   font-weight: 600;
   margin-bottom: 0.5rem;
   min-height: 3.5rem;
-  color: #111; /* Light mode fallback */
+  color: #000; /* fallback for light mode */
 }
 
 @media (prefers-color-scheme: dark) {
   .project-title {
-    color: #f1f1f1; /* Light color for dark background */
+    color: #fff;
+  }
+}
+
   }
 }
 
