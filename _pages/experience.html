@@ -7,48 +7,46 @@ author_profile: true
 
 <style>
 :root {
-  --text-primary-light: #333;
-  --text-secondary-light: #555;
-  --text-tech-light: #444;
+  /* Light mode */
+  --exp-title-light: #111;
+  --exp-meta-light: #555;
+  --exp-tech-light: #333;
+  --exp-desc-light: #222;
 
-  --text-primary-dark: #eee;
-  --text-secondary-dark: #bbb;
-  --text-tech-dark: #ccc;
-}
-
-@media (prefers-color-scheme: dark) {
-  .experience-title {
-    color: var(--text-primary-dark);
-  }
-
-  .experience-meta {
-    color: var(--text-secondary-dark);
-  }
-
-  .experience-tech {
-    color: var(--text-tech-dark);
-  }
-
-  .experience-points {
-    color: var(--text-primary-dark);
-  }
+  /* Dark mode */
+  --exp-title-dark: #f1f1f1;
+  --exp-meta-dark: #ccc;
+  --exp-tech-dark: #ddd;
+  --exp-desc-dark: #e0e0e0;
 }
 
 @media (prefers-color-scheme: light) {
   .experience-title {
-    color: var(--text-primary-light);
+    color: var(--exp-title-light);
   }
-
   .experience-meta {
-    color: var(--text-secondary-light);
+    color: var(--exp-meta-light);
   }
-
   .experience-tech {
-    color: var(--text-tech-light);
+    color: var(--exp-tech-light);
   }
-
   .experience-points {
-    color: var(--text-primary-light);
+    color: var(--exp-desc-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .experience-title {
+    color: var(--exp-title-dark);
+  }
+  .experience-meta {
+    color: var(--exp-meta-dark);
+  }
+  .experience-tech {
+    color: var(--exp-tech-dark);
+  }
+  .experience-points {
+    color: var(--exp-desc-dark);
   }
 }
 
