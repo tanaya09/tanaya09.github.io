@@ -6,6 +6,52 @@ author_profile: true
 ---
 
 <style>
+:root {
+  --text-primary-light: #333;
+  --text-secondary-light: #555;
+  --text-tech-light: #444;
+
+  --text-primary-dark: #eee;
+  --text-secondary-dark: #bbb;
+  --text-tech-dark: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  .experience-title {
+    color: var(--text-primary-dark);
+  }
+
+  .experience-meta {
+    color: var(--text-secondary-dark);
+  }
+
+  .experience-tech {
+    color: var(--text-tech-dark);
+  }
+
+  .experience-points {
+    color: var(--text-primary-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .experience-title {
+    color: var(--text-primary-light);
+  }
+
+  .experience-meta {
+    color: var(--text-secondary-light);
+  }
+
+  .experience-tech {
+    color: var(--text-tech-light);
+  }
+
+  .experience-points {
+    color: var(--text-primary-light);
+  }
+}
+
 .experience-section {
   margin-bottom: 2.5rem;
 }
@@ -17,22 +63,21 @@ author_profile: true
 
 .experience-meta {
   font-size: 0.95rem;
-  color: #555;
   margin-bottom: 0.25rem;
 }
 
 .experience-tech {
   font-size: 0.9rem;
-  color: #444;
   font-style: italic;
   margin-bottom: 0.5rem;
 }
 
-.experience-description {
+.experience-points {
   font-size: 0.9rem;
-  color: #333;
   line-height: 1.5;
-  white-space: pre-line;
+  margin-left: 1.2rem;
+  margin-top: 0.25rem;
+  list-style-type: disc;
 }
 </style>
 
@@ -42,6 +87,12 @@ author_profile: true
     <div class="experience-title">{{ exp.title }}</div>
     <div class="experience-meta">{{ exp.company }} – {{ exp.location }} | {{ exp.date }}</div>
     <div class="experience-tech">{{ exp.tech }}</div>
-    <div class="experience-description">{{ exp.description }}</div>
+    <ul class="experience-points">
+      {% for point in exp.description | newline_to_br | split: '<br />' %}
+        {% unless point == "" %}
+          <li>{{ point | strip }}</li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
   </div>
 {% endfor %}
