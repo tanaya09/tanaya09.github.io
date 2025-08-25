@@ -6,77 +6,56 @@ author_profile: true
 ---
 
 <style>
-:root {
-  /* Light mode */
-  --exp-title-light: #111;
-  --exp-meta-light: #555;
-  --exp-tech-light: #333;
-  --exp-desc-light: #222;
+  /* 1. Define semantic variables with light mode as the default */
+  :root {
+    --exp-title-color: #111;
+    --exp-meta-color: #555;
+    --exp-tech-color: #333;
+    --exp-desc-color: #222;
+  }
 
-  /* Dark mode */
-  --exp-title-dark: #f1f1f1;
-  --exp-meta-dark: #ccc;
-  --exp-tech-dark: #ddd;
-  --exp-desc-dark: #e0e0e0;
-}
+  /* 2. Override the variables for dark mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --exp-title-color: #f1f1f1;
+      --exp-meta-color: #ccc;
+      --exp-tech-color: #ddd;
+      --exp-desc-color: #e0e0e0;
+    }
+  }
 
-@media (prefers-color-scheme: light) {
+  /* 3. Apply the variables to your elements once */
+  .experience-section {
+    margin-bottom: 2.5rem;
+  }
+
   .experience-title {
-    color: var(--exp-title-light);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--exp-title-color);
   }
+
   .experience-meta {
-    color: var(--exp-meta-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    color: var(--exp-meta-color);
   }
+
   .experience-tech {
-    color: var(--exp-tech-light);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: var(--exp-tech-color);
   }
+
   .experience-points {
-    color: var(--exp-desc-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-left: 1.2rem;
+    margin-top: 0.25rem;
+    list-style-type: disc;
+    color: var(--exp-desc-color);
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .experience-title {
-    color: var(--exp-title-dark);
-  }
-  .experience-meta {
-    color: var(--exp-meta-dark);
-  }
-  .experience-tech {
-    color: var(--exp-tech-dark);
-  }
-  .experience-points {
-    color: var(--exp-desc-dark);
-  }
-}
-
-.experience-section {
-  margin-bottom: 2.5rem;
-}
-
-.experience-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.experience-meta {
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
-}
-
-.experience-tech {
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.experience-points {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-left: 1.2rem;
-  margin-top: 0.25rem;
-  list-style-type: disc;
-}
 </style>
 
 {% assign experiences = site.data.experiences %}
