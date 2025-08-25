@@ -6,7 +6,8 @@ author_profile: true
 ---
 
 <style>
-  /* 1. Define semantic variables with light mode as the default */
+  /* 1. Define CSS variables for your colors.
+     These will be the default (light mode) values. */
   :root {
     --exp-title-color: #111;
     --exp-meta-color: #555;
@@ -14,17 +15,17 @@ author_profile: true
     --exp-desc-color: #222;
   }
 
-  /* 2. Override the variables for dark mode */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --exp-title-color: #f1f1f1;
-      --exp-meta-color: #ccc;
-      --exp-tech-color: #ddd;
-      --exp-desc-color: #e0e0e0;
-    }
+  /* 2. Override the variables ONLY when your theme's dark mode is active.
+     This is done by targeting the attribute the theme adds to the <html> tag. */
+  html[data-theme="dark"] {
+    --exp-title-color: #f1f1f1;
+    --exp-meta-color: #ccc;
+    --exp-tech-color: #ddd;
+    --exp-desc-color: #e0e0e0;
   }
 
-  /* 3. Apply the variables to your elements once */
+  /* 3. Apply the variables to your elements.
+     These rules now work perfectly for both modes. */
   .experience-section {
     margin-bottom: 2.5rem;
   }
