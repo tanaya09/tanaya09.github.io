@@ -1,27 +1,29 @@
 - title: Full Stack Developer Intern
   company: Referrio
   location: New York, USA
-  date: June 2025 – Present
-  tech: Next.js, React.js, PostgreSQL, Prisma
-  description: |
-    • Engineered scalable backend APIs and frontend UIs
-    • Improved system responsiveness by 40%
-    • Integrated support ticket and LoRA-based AI modules
+  date: June 2025 – August 2025
+  tech: Next.js, React.js, PostgreSQL, Prisma, Nodejs, GCP
+  description:  Engineered a scalable full-stack application using Next.js and React.js to modernize internal workflows, resulting in a 40% improvement in system responsiveness and **25% reduction** in backend latency.  
+- Established structured API integration with Axios and RESTful endpoints, improving frontend-backend communication and ensuring 100% data consistency, reducing sync issues by 30%.  
+- Built a secure, real-time support ticket system using Next.js server actions** and Prisma ORM, enabling authenticated issue.
 
 - title: Data Analyst Intern
   company: Wilo Mather & Platt
   location: Pune, India
   date: Jan 2024 – May 2024
   tech: Power BI, SQL, Excel
-  description: |
-    • Built dashboards for $23M expense reports
-    • Identified cost leaks and optimized travel reimbursements
+  description: Engineered data solutions to monitor financial risks and expenses and optimize $23M annual budget using Power BI and SQL APIs, streamlining financial analytics for cross-functional teams.
+Prepared monthly status reports and presented findings to cross-functional teams with alerts to identify high-cost areas and potential savings opportunities.
+Achieved a 38% reduction in expenses across 2022 by analyzing employee behavior patterns.
+
 
 - title: CESA Co-Chair
   company: Computer Engineering Department
   location: Pune, India
   date: Aug 2023 – May 2024
-  tech: Leadership, Event Planning, Google Sheets, Social Media
-  description: |
-    • Organized hackathons, workshops, social impact events
-    • Managed student data and increased outreach by 50%
+  tech: Leadership, Database, Event Planning, Google Sheets, Social Media
+  description: Led the official student club of the Computer Engineering department with 90+ members, increasing engagement by 40% through a series of technical and non-technical events.
+Boosted Instagram and LinkedIn reach by 50% by strategizing digital campaigns and promotional content.
+Spearheaded a community outreach initiative, raising ₹20,000 (~$240) in donations to support local orphanages with educational supplies.
+Managed administrative operations including event logistics, meeting documentation, email correspondence, and calendar coordination.
+Conducted peer-led workshops on Python, Data Structures, Git, and Version Control, enhancing foundational skills of junior students.
