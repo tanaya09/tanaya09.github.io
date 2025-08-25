@@ -6,9 +6,7 @@ author_profile: true
 ---
 
 <style>
-  /* 1. DEFINE COLOR VARIABLES FOR LIGHT AND DARK THEMES */
   :root {
-    /* Light Mode (Default) */
     --page-bg: #fff;
     --text-color: #333;
     --card-bg: #fff;
@@ -22,15 +20,13 @@ author_profile: true
     --filter-btn-active-bg: #0366d6;
     --filter-btn-active-text: #fff;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      /* Dark Mode Overrides */
       --page-bg: #121212;
       --text-color: #eee;
       --card-bg: #1e1e1e;
       --card-shadow: rgba(0, 0, 0, 0.4);
-      --title-color: #fff; /* Title color for dark mode */
+      --title-color: #fff;
       --tech-text-color: #bbb;
       --description-text-color: #ccc;
       --link-color: #58a6ff;
@@ -41,121 +37,67 @@ author_profile: true
     }
   }
 
-  /* 2. APPLY VARIABLES TO YOUR STYLES */
-
-  /* Apply background to the main content area if needed,
-     though Jekyll themes usually handle the body background. */
-
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1.5rem;
     padding: 1rem 0;
   }
-
-  .filter-buttons {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
+  .filter-buttons { margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .filter-buttons button {
-    padding: 0.5rem 1rem;
-    border: none;
-    background: var(--filter-btn-bg);
-    color: var(--filter-btn-text);
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background 0.3s;
+    padding: 0.5rem 1rem; border: none; background: var(--filter-btn-bg); color: var(--filter-btn-text);
+    cursor: pointer; border-radius: 5px; font-weight: 500; transition: background 0.3s;
   }
-
-  .filter-buttons button.active,
-  .filter-buttons button:hover {
-    background: var(--filter-btn-active-bg);
-    color: var(--filter-btn-active-text);
+  .filter-buttons button.active, .filter-buttons button:hover {
+    background: var(--filter-btn-active-bg); color: var(--filter-btn-active-text);
   }
 
   .project-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
+    background: var(--card-bg); border-radius: 12px; overflow: hidden;
     box-shadow: 0 4px 12px var(--card-shadow);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease;
+    display: flex; flex-direction: column; transition: transform 0.2s ease;
   }
+  .project-card:hover { transform: scale(1.02); }
+  .project-image { width: 100%; height: 220px; object-fit: cover; }
+  .project-content { padding: 0.25rem 1rem 1rem; display: flex; flex-direction: column; flex-grow: 1; }
+  .project-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; min-height: 3.5rem; color: var(--title-color); }
+  .project-tech { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--tech-text-color); }
+  .project-description { font-size: 0.9rem; color: var(--description-text-color); margin-bottom: 1rem; line-height: 1.4; flex-grow: 1; }
+  .project-github { color: var(--link-color); font-weight: bold; text-decoration: none; }
 
-  .project-card:hover {
-    transform: scale(1.02);
-  }
-
-  .project-image {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-
-  .project-content {
-    padding: 0.25rem 1rem 1rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    min-height: 3.5rem;
-    color: var(--title-color); /* Use variable for title color */
-  }
-
-  .project-tech {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-    color: var(--tech-text-color); /* Use variable for tech text */
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-    color: var(--description-text-color); /* Use variable for description */
-    margin-bottom: 1rem;
-    line-height: 1.4;
-    flex-grow: 1;
-  }
-
-  .project-github {
-    color: var(--link-color); /* Use variable for links */
-    font-weight: bold;
-    text-decoration: none;
-  }
+  [hidden]{display:none!important}
 </style>
 
 <div class="filter-buttons">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="ai-ml">AI/ML</button> <!-- ← THIS IS THE LINE TO CHANGE -->
-  <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
-  <button class="filter-btn" data-filter="web-dev">Web Dev</button>
+  <button type="button" class="filter-btn active" data-filter="all">All</button>
+  <button type="button" class="filter-btn" data-filter="ai-ml">AI/ML</button>
+  <button type="button" class="filter-btn" data-filter="data-engineering">Data Engineering</button>
+  <button type="button" class="filter-btn" data-filter="web-dev">Web Dev</button>
 </div>
 
 <div class="projects-grid">
   {% for project in site.projects %}
-    <div class="project-card" data-category="{{ project.category | downcase }}">
-      {% if project.header.image %}
+    {% assign rawcat = project.category %}
+    {% if project.categories and rawcat == nil %}
+      {% assign rawcat = project.categories | first %}
+    {% endif %}
+    {% assign cat = rawcat | downcase | strip | replace: ' ', '-' | replace: '/', '-' | replace: '_', '-' | default: 'uncategorized' %}
+
+    <div class="project-card" data-category="{{ cat }}">
+      {% if project.header and project.header.image %}
         <img src="{{ project.header.image | relative_url }}" alt="{{ project.title }}" class="project-image">
       {% endif %}
+
       <div class="project-content">
         <div class="project-title">{{ project.title }}</div>
         <div class="project-tech"><strong>Tech Stack:</strong> {{ project.tech }}</div>
         <div class="project-description">{{ project.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
         <div style="margin-top: auto;">
           {% if project.live %}
-            <a class="project-github" href="{{ project.live }}" target="_blank">Live Demo ↗</a><br>
+            <a class="project-github" href="{{ project.live }}" target="_blank" rel="noopener">Live Demo ↗</a><br>
           {% endif %}
           {% if project.github %}
-            <a class="project-github" href="{{ project.github }}" target="_blank">View on GitHub ↗</a>
+            <a class="project-github" href="{{ project.github }}" target="_blank" rel="noopener">View on GitHub ↗</a>
           {% endif %}
         </div>
       </div>
@@ -165,25 +107,17 @@ author_profile: true
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".project-card");
+  const slug = s => (s||"").toLowerCase().trim().replace(/[_/\\\s]+/g,"-").replace(/[^a-z0-9-]/g,"");
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards   = document.querySelectorAll(".project-card");
 
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
-
-      // Update active button
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      // Filter cards
-      cards.forEach(card => {
-        const category = card.getAttribute("data-category");
-        if (filter === "all" || category === filter) {
-          card.style.display = "flex";
-        } else {
-          card.style.display = "none";
-        }
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const f = slug(btn.dataset.filter);
+      buttons.forEach(b => b.classList.toggle("active", b === btn));
+      cards.forEach(c => {
+        const cat = slug(c.dataset.category);
+        c.hidden = !(f === "all" || cat === f);
       });
     });
   });
