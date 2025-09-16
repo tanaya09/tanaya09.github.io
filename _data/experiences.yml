@@ -4,10 +4,10 @@
   date: June 2025 – August 2025
   tech: Next.js, React.js, PostgreSQL, Prisma, Node.js, GCP
   description: |
-    Engineered a scalable full-stack application for a fast growing startup using TypeScript, Next.js and React.js, developing reusable UI components with TailwindCSS and ShadCN UI to optimizations dramatically boosted user experience and system performance, reduced data latency, and were deployed via a CI/CD pipeline
-    Built and validated Node.js and Express.js API endpoints with Postman, achieving 100% data consistency
-    Applied Agile methodologies & developed a secure, real-time support ticketing system using Node Express 
-    PostgreSQL, which centralized issue tracking and accelerated internal support resolution by approximately 20%
+    Engineered a scalable full-stack application for a fast growing startup using TypeScript, Next.js and React.js, developing reusable UI components with TailwindCSS and ShadCN UI to optimizations dramatically boosted user experience and system performance, reduced data latency, and were deployed via a CI/CD pipeline.
+    Built and validated Node.js and Express.js API endpoints with Postman, achieving 100% data consistency.
+    Applied Agile methodologies & developed a secure, real-time support ticketing system using Node Express.
+    PostgreSQL, which centralized issue tracking and accelerated internal support resolution by approximately 20%.
 
 - title: Data Analyst Intern
   company: Wilo Mather & Platt
@@ -15,9 +15,9 @@
   date: Jan 2024 – May 2024
   tech: Power BI, SQL, Excel
   description: |
-    Engineered data solutions to monitor financial risks and expenses and optimize $23M annual budget using Power BI and SQL APIs to streamline financial analytics for cross-functional teams
-    Prepared monthly status reports and presented findings to cross-functional teams along with alert to identify high cost areas & potential cost savings opportunities
-    Achieved a 38% reduction in expenses using data analysis over 2022 by analyzing employee behavior patterns
+    Engineered data solutions to monitor financial risks and expenses and optimize $23M annual budget using Power BI and SQL APIs to streamline financial analytics for cross-functional teams.
+    Prepared monthly status reports and presented findings to cross-functional teams along with alert to identify high cost areas & potential cost savings opportunities.
+    Achieved a 38% reduction in expenses using data analysis over 2022 by analyzing employee behavior patterns.
 
 - title: CESA Co-Chair
   company: Computer Engineering Department
