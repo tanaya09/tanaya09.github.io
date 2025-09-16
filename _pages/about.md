@@ -9,12 +9,10 @@ redirect_from:
 
 <p style="text-align: justify; line-height: 1.6;">
 
-I'm Tanaya Pawar, a Master's student in Computer Science at NYU Tandon, passionate about building high-performance systems that solve real-world problems. With a strong foundation in full-stack and backend development, I've contributed to startup products like Referrio and developed impactful academic projects such as CrisisCast and Parameter efficient transformer. 
+Hi, I’m Tanaya Pawar a software engineer with a passion for building scalable systems and solving real-world problems with code. My background spans full-stack development, backend APIs, and data-intensive systems, with experience in tools like React, Node.js, FastAPI, and PostgreSQL. I’ve contributed to startups and research projects alike from a real-time support ticketing system to an LLM powered crisis detection pipeline. I’m particularly excited about the intersection of software, AI, and impact-driven tech. Whether I’m working through an API spec, debugging a Kafka pipeline, or collaborating in Agile teams, I enjoy turning complex ideas into reliable, user-centered products. Let’s build something great together.
+</p>
 
-My work spans modern technologies including React, Next.js, Node.js, Prisma, PostgreSQL, Python, Docker, cloud platforms like GCP and In the AI domain, I’m passionate about building ML-powered systems, with experience in traditional supervised learning, NLP pipelines, and Generative AI (LLMs, RAG, LoRA). I'm especially drawn to integrating AI into real-world applications that drive user and business value. I enjoy designing scalable architectures, building robust APIs, and integrating intelligent features using modern AI and data tools.
+<p style="text-align: justify; line-height: 1.6;">
 
-Beyond code, I’m deeply involved in academic research (in NLP, Big Data, and applied AI), and have supported lab and classroom environments through peer workshops, Python/DSA bootcamps, and student-led hackathons. As Co-Chair of my undergrad tech club (CESA), I scaled membership, launched digital outreach campaigns, and led community-driven initiatives.
-
-Currently, I’m seeking impactful SDE and ML engineering internships for Summer 2025 where I can contribute to both system design and intelligent automation.
-
+Currently seeking internship opportunities (Fall/Spring) and full-time roles (2026) where I can continue learning, collaborating with great teams, and contributing to systems that scale and make a difference
 </p>
