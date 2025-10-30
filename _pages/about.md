@@ -10,11 +10,11 @@ redirect_from:
 <p style="text-align: justify; line-height: 1.6;">
 
 Hi, I’m Tanaya Pawar, a software engineer who loves turning ideas into systems that actually work.
-I’ve built everything from AI-driven tools to full-stack web apps, and I’m especially drawn to projects that blend software, data, and impact.
-Whether it’s scaling an API, fine-tuning a model, or simplifying user experiences, I care most about building things that matter.
-Currently exploring internships (Fall/Spring) and full-time SDE roles (2026) always excited to learn, collaborate, and create something meaningful.
+I’ve worked with startups and research teams, building everything from AI-driven tools to full-stack web apps that solve real-world problems.I’m especially drawn to the intersection of software, data, and impact, and I enjoy creating products that are both scalable and human-centered.
 
-Let’s connect and build something great together.
+Currently exploring internships (Fall/Spring) and full-time SDE roles (2026) — always excited to learn, collaborate, and build something meaningful.
+
+Let’s connect and create something great together.
 </p>
 
 <p style="text-align: justify; line-height: 1.6;">
