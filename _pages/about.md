@@ -9,7 +9,12 @@ redirect_from:
 
 <p style="text-align: justify; line-height: 1.6;">
 
-Hi, I’m Tanaya Pawar a software engineer with a passion for building scalable systems and solving real-world problems with code. My background spans full-stack development, backend APIs, and data-intensive systems, with experience in tools like React, Node.js, FastAPI, and PostgreSQL. I’ve contributed to startups and research projects alike from a real-time support ticketing system to an LLM powered crisis detection pipeline. I’m particularly excited about the intersection of software, AI, and impact-driven tech. Whether I’m working through an API spec, debugging a Kafka pipeline, or collaborating in Agile teams, I enjoy turning complex ideas into reliable, user-centered products. Let’s build something great together.
+Hi, I’m Tanaya Pawar, a software engineer who loves turning ideas into systems that actually work.
+I’ve built everything from AI-driven tools to full-stack web apps, and I’m especially drawn to projects that blend software, data, and impact.
+Whether it’s scaling an API, fine-tuning a model, or simplifying user experiences, I care most about building things that matter.
+Currently exploring internships (Fall/Spring) and full-time SDE roles (2026) always excited to learn, collaborate, and create something meaningful.
+
+Let’s connect and build something great together.
 </p>
 
 <p style="text-align: justify; line-height: 1.6;">
