@@ -13,6 +13,7 @@ main:
 
   - title: "Resume"
     url: /Tanaya_Pawar_Resume_2025.pdf
+    target: "_blank"
 
 
   - title: "Experience"
